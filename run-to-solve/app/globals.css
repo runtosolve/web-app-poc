@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: FFFFFF;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --greyDarkOne: #1A2329;
+  --greyDarkTwo: #232C38;
+  --greyOne: #464B62;
+  --greyTwo: #5F6376;
+  --greyLightOne: #C1C4CB;
+  --greyLightTwo: #C6CCD0;
+  --purple: #611E60;
+  --yellow: #F5E388;
+  --aqua: #22638A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ==== Custom ==== */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Header {
+  width: 100%;
+  display: flex;
+  height: 10%;
+  background: var(--greyDarkTwo);
+  ;
+}
+
+.user-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  svg {
+    fill: transparent;
+    stroke: var(--greyLightOne);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.logo-wrapper {
+  margin: 0 0 0 70px;
+  background: var(--foreground-rgb);
+  width: calc(25% - 70px);
+}
+
+.Core {
+  background: var(--greyDarkTwo);
+  ;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Handlers {
+  display: flex;
+  height: 98%;
+}
+
+.btn-menu {
+  width: 70px;
+  height: 70px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--greyOne);
+  opacity: 40%;
+
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--greyLightOne);
+  }
+
+  &.active {
+    opacity: 100%;
+  }
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  align-items: center;
+  border-top: 1px solid #c1c4cb3b;
+  padding: 15px 0 0;
+  margin: 0 0 20px;
+}
+
+.svg-label {
+  display: flex;
+  color: var(--greyLightOne);
+  margin: 0 0 15px;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: var(--greyLightOne);
+    height: 20px;
+    width: 20px;
+    margin: 0 15px 0 0;
+  }
+}
+
+.Menu {
+  display: flex;
+
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--greyOne);
+    width: 100%;
+    padding: 15px;
+    border-right: 1px solid #c1c4cb42;
+  }
+}
+
+input[type="range"] {
+  accent-color: var(--yellow);
+}
+
+.input-boolean {
+  display: flex;
+  width: 50px;
+  cursor: pointer;
+  fill: var(--greyDarkOne);
+  stroke: var(--greyLightOne);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.active {
+    svg {
+      fill: var(--greyLightOne);
+      stroke: var(--greyDarkOne);
+    }
+  }
+
+  &.gravity {
+    transform: rotate(180deg);
+  }
+}
+
+.direction {
+  display: flex;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 30px;
+
+  .arrow {
+    display: flex;
+    min-width: 15px;
+    justify-content: center;
+    align-items: center;
+    top: -1px;
+    position: relative;
+
+    svg {
+      height: auto;
+    }
+  }
+}
+
+.Render {
+  background: var(--greyLightTwo);
+  height: 100%;
+  box-shadow: -2px -1px 7px var(--greyDarkOne);
+}
+
+.container-render {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "spans spans spans"
+    "cross results results";
+
+
+  .spans {
+    grid-area: spans;
+  }
+
+  .cross {
+    grid-area: cross;
+  }
+
+  .results {
+    grid-area: results;
+  }
+
+}
+
+.Resume {
+  width: 100%;
+  display: flex;
+  height: 3%;
+  background: rgb(var(--greyDarkOne));
+  font-size: 8px;
+  text-align: right;
+  justify-content: right;
+  box-shadow: 2px 2px 4px;
+  align-items: center;
+  padding: 0 15px;
+}
