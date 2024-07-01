@@ -1,0 +1,10 @@
+{
+  "resourceName": "putlinlineRequests",
+  "tableName": "putlinline",
+  "partitionKey": {
+    "fieldName": "createdAt",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

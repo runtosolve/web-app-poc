@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "webapppoc1d3ee1cc",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
